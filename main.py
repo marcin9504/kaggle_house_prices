@@ -117,7 +117,7 @@ def main():
     columns_to_fill_with_most_frequent = ["MSZoning", "Electrical", "KitchenQual", "Exterior1st", "Exterior2nd",
                                           "SaleType"]
     for column in columns_to_fill_with_most_frequent:
-        all_data[column] = all_data[column].fillna(all_data[column]).mode()[0]
+        all_data[column] = all_data[column].fillna(all_data[column].mode()[0])
 
     all_data = all_data.drop(["Utilities"], axis=1)
 
